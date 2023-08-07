@@ -10,4 +10,16 @@ public class Booking {
     private float distanceInKM;
     private String typeOfVehicle;
     private float price;
+
+    public Booking() {
+    }
+
+    public Booking(int id, String pickupLocation, String dropLocation, float distanceInKM, String typeOfVehicle, float price) {
+        this.id = id;
+        this.pickupLocation = pickupLocation;
+        this.dropLocation = dropLocation;
+        this.distanceInKM = distanceInKM;
+        this.typeOfVehicle = typeOfVehicle;
+        this.price = price;
+    }
 }
