@@ -2,6 +2,8 @@ package com.niit.bej.ride.booking.app.booking.app.model;
 
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.util.Objects;
+
 public class Booking {
     @MongoId
     private int id;
@@ -69,5 +71,30 @@ public class Booking {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return id == booking.id && Float.compare(distanceInKM, booking.distanceInKM) == 0 && Float.compare(price, booking.price) == 0 && Objects.equals(pickupLocation, booking.pickupLocation) && Objects.equals(dropLocation, booking.dropLocation) && Objects.equals(typeOfVehicle, booking.typeOfVehicle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, pickupLocation, dropLocation, distanceInKM, typeOfVehicle, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", pickupLocation='" + pickupLocation + '\'' +
+                ", dropLocation='" + dropLocation + '\'' +
+                ", distanceInKM=" + distanceInKM +
+                ", typeOfVehicle='" + typeOfVehicle + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
