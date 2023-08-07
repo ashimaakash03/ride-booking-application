@@ -19,4 +19,15 @@ public class User {
     private String email;
     @Column(name = "password", length = 25, unique = true, nullable = false)
     private String password;
+
+    public User() {
+    }
+
+    public User(int id, String name, String contact, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.contact = contact;
+        this.email = email;
+        this.password = password;
+    }
 }
