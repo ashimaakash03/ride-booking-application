@@ -13,6 +13,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>ride-booking-application</name>
     <description>ride-booking-application</description>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>user-auth</module>
+        <module>booking-app</module>
+        <module>api-gateway</module>
+        <module>eureka-server</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
