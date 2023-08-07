@@ -17,6 +17,7 @@ public class User {
 
     public User() {
     }
+
     public User(int id, String name, String contact, String email, List<Booking> bookings) {
         this.id = id;
         this.name = name;
@@ -80,12 +81,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                ", bookings=" + bookings +
-                '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", contact='" + contact + '\'' + ", email='" + email + '\'' + ", bookings=" + bookings + '}';
     }
 }
