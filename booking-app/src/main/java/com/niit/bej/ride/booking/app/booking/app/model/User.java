@@ -10,6 +10,18 @@ public class User {
     @MongoId
     private int id;
     private String name;
+    private String contact;
     private String email;
     private List<Booking> bookings;
+
+    public User() {
+    }
+
+    public User(int id, String name, String contact, String email, List<Booking> bookings) {
+        this.id = id;
+        this.name = name;
+        this.contact = contact;
+        this.email = email;
+        this.bookings = bookings;
+    }
 }
