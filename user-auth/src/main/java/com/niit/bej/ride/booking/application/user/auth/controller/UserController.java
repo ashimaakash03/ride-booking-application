@@ -48,10 +48,10 @@ public class UserController {
             } else {
                 throw new InvalidCredentialsException("Email and Password Mismatch");
             }
-        } catch (UserNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidCredentialsException e) {
-            throw new RuntimeException(e);
+        } catch (UserNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (InvalidCredentialsException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
         }
     }
 }
