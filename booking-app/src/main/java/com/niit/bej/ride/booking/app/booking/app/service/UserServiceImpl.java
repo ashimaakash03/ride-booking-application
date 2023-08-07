@@ -2,9 +2,11 @@ package com.niit.bej.ride.booking.app.booking.app.service;
 
 import com.niit.bej.ride.booking.app.booking.app.model.Booking;
 import com.niit.bej.ride.booking.app.booking.app.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
     @Override
     public User createNewUser(User user) {
