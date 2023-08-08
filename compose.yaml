@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  mysql-database-service:
+    image: mysql
+    container_name: mysql-container
+    ports:
+      - "3307:3306"
+    networks: [ ride-booking-app-network ]
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  mongodb-database-service:
+    image: mongo
+    container_name: mongodb-database-container
+    ports:
+      - "27018:27017"
+    networks: [ ride-booking-app-network ]
+
+  user-auth-service:
+    build: user-auth/
+    container_name: user-auth-service-container
+    ports:
+      - "8081:8081"
+    networks: [ ride-booking-app-network ]
+    depends_on: [ mysql-database-service ]
+    restart: always
+
+  ride-booking-service:
+    build: booking-app/
+    container_name: booking-app-service-container
+    ports:
+      - "8082:8082"
+    networks: [ ride-booking-app-network ]
+    depends_on: [ mongodb-database-service ]
+    restart: always
