@@ -2,7 +2,6 @@ package com.niit.bej.ride.booking.app.booking.app.service;
 
 import com.niit.bej.ride.booking.app.booking.app.exception.BookingNotFoundException;
 import com.niit.bej.ride.booking.app.booking.app.exception.EmptyBookingsListException;
-import com.niit.bej.ride.booking.app.booking.app.exception.UserAlreadyCreatedException;
 import com.niit.bej.ride.booking.app.booking.app.exception.UserNotFoundException;
 import com.niit.bej.ride.booking.app.booking.app.model.Booking;
 import com.niit.bej.ride.booking.app.booking.app.model.User;
@@ -21,15 +20,15 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
-    @Override
-    public User createNewUser(User user) throws UserAlreadyCreatedException {
-        Optional<User> optionalUser = this.userRepository.findById(user.getId());
-        if (optionalUser.isPresent()) {
-            throw new UserAlreadyCreatedException("User With ID: " + user.getId() + " already preesent");
-        } else {
-            return this.userRepository.save(user);
-        }
-    }
+//    @Override
+//    public User createNewUser(User user) throws UserAlreadyCreatedException {
+//        Optional<User> optionalUser = this.userRepository.findById(user.getId());
+//        if (optionalUser.isPresent()) {
+//            throw new UserAlreadyCreatedException("User With ID: " + user.getId() + " already preesent");
+//        } else {
+//            return this.userRepository.save(user);
+//        }
+//    }
 
     @Override
     public User fetchUserByName(String name) throws UserNotFoundException {
