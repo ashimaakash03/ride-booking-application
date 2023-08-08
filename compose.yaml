@@ -26,6 +26,8 @@ services:
     depends_on: [ mysql-database-service ]
     restart: always
 
+
+
   ride-booking-service:
     build: booking-app/
     container_name: booking-app-service-container
