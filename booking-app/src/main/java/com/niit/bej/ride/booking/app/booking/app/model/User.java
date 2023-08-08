@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 import java.util.List;
 import java.util.Objects;
 
-@Document(collection = "bookings")
+@Document(collection = "users")
 public class User {
     @MongoId
     private int id;
