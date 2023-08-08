@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Booking updateABooking(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException {
+    public Booking updateBooking(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException {
         Optional<User> optionalUser = this.userRepository.findById(userId);
         if (optionalUser.isPresent()) {
             User userInDatabase = optionalUser.get();
@@ -116,7 +116,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteABookingOfUser(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException {
+    public boolean deleteBookingOfUser(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException {
         Optional<User> optionalUser = this.userRepository.findById(userId);
         if (optionalUser.isPresent()) {
             User userInDatabase = optionalUser.get();

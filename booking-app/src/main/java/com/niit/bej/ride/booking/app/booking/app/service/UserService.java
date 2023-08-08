@@ -21,9 +21,9 @@ public interface UserService {
 
     Booking findSpecificBooking(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException;
 
-    Booking updateABooking(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException;
+    Booking updateBooking(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException;
 
-    boolean deleteABookingOfUser(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException;
+    boolean deleteBookingOfUser(int userId, Booking booking) throws BookingNotFoundException, UserNotFoundException;
 
     boolean deleteAllBookingsOfUser(int userId) throws EmptyBookingsListException, UserNotFoundException;
 }
