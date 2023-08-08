@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User registerAUser(User user) throws UserAlreadyExistsException {
+    public User registerUser(User user) throws UserAlreadyExistsException {
         Optional<User> optionalUser = this.userRepository.findById(user.getId());
         if (optionalUser.isPresent()) {
             throw new UserAlreadyExistsException("User With ID: " + user.getId() + " already present");
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean loginAUser(User user) throws InvalidCredentialsException, UserNotFoundException {
+    public boolean loginUser(User user) throws InvalidCredentialsException, UserNotFoundException {
         Optional<User> optionalUser = this.userRepository.findById(user.getId());
         if (optionalUser.isPresent()) {
             User userInDatabase = optionalUser.get();

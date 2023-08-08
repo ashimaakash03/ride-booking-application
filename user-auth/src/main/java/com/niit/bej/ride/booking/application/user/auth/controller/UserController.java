@@ -29,9 +29,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerANewUser(@RequestBody User user) {
+    public ResponseEntity<?> registerNewUser(@RequestBody User user) {
         try {
-            User newlyRegisteredUser = this.userService.registerAUser(user);
+            User newlyRegisteredUser = this.userService.registerUser(user);
             return new ResponseEntity<>(newlyRegisteredUser, HttpStatus.CREATED);
         } catch (UserAlreadyExistsException exception) {
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
@@ -41,7 +41,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> loginExistingUser(@RequestBody User user) {
         try {
-            boolean isUserLoggedIn = this.userService.loginAUser(user);
+            boolean isUserLoggedIn = this.userService.loginUser(user);
             if (isUserLoggedIn) {
                 Map<String, String> generatedToken = this.securityTokenGenerator.generateToken(user);
                 return new ResponseEntity<>(generatedToken, HttpStatus.OK);

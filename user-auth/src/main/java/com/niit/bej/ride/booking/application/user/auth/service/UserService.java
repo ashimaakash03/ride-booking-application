@@ -6,7 +6,7 @@ import com.niit.bej.ride.booking.application.user.auth.exception.UserNotFoundExc
 import com.niit.bej.ride.booking.application.user.auth.model.User;
 
 public interface UserService {
-    User registerAUser(User user) throws UserAlreadyExistsException;
+    User registerUser(User user) throws UserAlreadyExistsException;
 
-    boolean loginAUser(User user) throws InvalidCredentialsException, UserNotFoundException;
+    boolean loginUser(User user) throws InvalidCredentialsException, UserNotFoundException;
 }

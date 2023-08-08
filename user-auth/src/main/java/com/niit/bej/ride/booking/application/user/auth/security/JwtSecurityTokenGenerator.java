@@ -12,7 +12,12 @@ import java.util.Map;
 public class JwtSecurityTokenGenerator implements SecurityTokenGenerator {
     @Override
     public Map<String, String> generateToken(User user) {
-        String jwtToken = Jwts.builder().setIssuedAt(new Date()).setSubject(user.getName()).signWith(SignatureAlgorithm.HS256, "password").compact();
+        String jwtToken = Jwts
+                .builder()
+                .setIssuedAt(new Date())
+                .setSubject(user.getName())
+                .signWith(SignatureAlgorithm.HS256, "password")
+                .compact();
         return Map.of("token", jwtToken,
                 "message", user.getName() + " logged in!");
     }
