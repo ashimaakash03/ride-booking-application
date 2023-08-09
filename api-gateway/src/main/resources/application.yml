@@ -1,1 +1,9 @@
+server:
+  port: 9000
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: api-gateway-service
 
