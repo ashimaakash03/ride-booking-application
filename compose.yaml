@@ -37,6 +37,13 @@ services:
     depends_on: [ mongodb-database-service ]
     restart: always
 
+  api-gateway-service:
+    build: api-gateway/
+    container_name: api-gateway-service-container
+    ports:
+      - "9000:9000"
+    networks: [ ride-booking-app-network ]
+
 networks:
   ride-booking-app-network:
     driver: bridge
