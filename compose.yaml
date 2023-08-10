@@ -17,6 +17,7 @@ services:
     networks: [ ride-booking-app-network ]
     environment:
       MYSQL_ROOT_PASSWORD: password
+    restart: always
 
   mongodb-database-service:
     image: mongo
