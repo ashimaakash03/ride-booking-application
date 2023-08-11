@@ -2,23 +2,18 @@ version: "3"
 
 services:
 
-  eureka-server-service:
-    build: eureka-server/
-    container_name: eureka-server-service-container
-    networks: [ ride-booking-app-network ]
-    ports:
-      - "8761:8761"
-
   mysql-database-service:
     image: mysql
     container_name: mysql-container
     ports:
       - "3307:3306"
-    networks: [ ride-booking-app-network ]
     environment:
       MYSQL_ROOT_PASSWORD: password
-    restart: always
-
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: user_auth_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks: [ ride-booking-app-network ]
 
   mongodb-database-service:
     image: mongo
@@ -36,8 +31,6 @@ services:
     depends_on: [ mysql-database-service, eureka-server-service ]
     restart: always
 
-
-
   booking-app-service:
     build: booking-app/
     container_name: booking-app-service-container
@@ -53,7 +46,16 @@ services:
     ports:
       - "9000:9000"
     networks: [ ride-booking-app-network ]
-    depends_on: [ eureka-server-service ]
+    depends_on: [ user-auth-service, booking-app-service, eureka-server-service ]
+    restart: always
+
+  eureka-server-service:
+    build: eureka-server/
+    container_name: eureka-server-service-container
+    networks: [ ride-booking-app-network ]
+    ports:
+      - "8761:8761"
+    restart: always
 
 networks:
   ride-booking-app-network:
