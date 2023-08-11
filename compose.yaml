@@ -38,7 +38,7 @@ services:
 
 
 
-  ride-booking-service:
+  booking-app-service:
     build: booking-app/
     container_name: booking-app-service-container
     ports:
