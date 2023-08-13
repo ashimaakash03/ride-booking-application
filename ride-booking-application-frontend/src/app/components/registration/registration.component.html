@@ -12,18 +12,23 @@
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="contact-input">Contact: </label>
-				<input class="form-control" id="contact-input" required type="text">
-				<div class="invalid-feedback"> Name Cannot be blank</div>
+				<input class="form-control" id="contact-input" pattern="^[789]\d{9}" required type="text">
+				<div class="invalid-feedback"> Contact Cannot be blank</div>
+				<div class="invalid-feedback"> Contact must be 10 digits and begin with 7/8/9</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="email-input">E-Mail: </label>
-				<input class="form-control" id="email-input" required type="email">
-				<div class="invalid-feedback"> Name Cannot be blank</div>
+				<input class="form-control" id="email-input" pattern="^[a-zA-Z0-9._]+@[a-zA-Z]+[.com]" required
+					   type="email">
+				<div class="invalid-feedback"> Email Cannot be blank</div>
+				<div class="invalid-feedback"> EMail must contain an '@' and must end with '.com'</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="password-input">Password: </label>
-				<input class="form-control" id="password-input" required type="password">
-				<div class="invalid-feedback"> Name Cannot be blank</div>
+				<input class="form-control" id="password-input" maxlength="25" minlength="10" required type="password">
+				<div class="invalid-feedback"> Password Cannot be blank</div>
+				<div class="invalid-feedback"> Must contain at least 10 characters</div>
+				<div class="invalid-feedback"> Must contain at most 25 characters</div>
 			</div>
 		</form>
 	</div>
