@@ -6,37 +6,58 @@
 	<div class="form mt-lg-5 justify-content-center">
 		<form [formGroup]="registrationForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
-				<label class="form-label" for="name-input">Full Name: </label>
-				<input class="form-control" formControlName="name" id="name-input" required type="text">
-				<div class="invalid-feedback"> Name Cannot be blank</div>
+				<label class="form-label" for="fullname-input">Full Name: </label>
+				<input class="form-control" formControlName="name" id="fullname-input" required type="text">
+				<div *ngIf="registrationForm.controls['fullname'].hasError('required')" class="invalid-feedback"> Name
+					Cannot be blank
+				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="contact-input">Contact: </label>
 				<input class="form-control" formControlName="contact" id="contact-input" pattern="^[789]\d{9}" required
 					   type="text">
-				<div class="invalid-feedback"> Contact Cannot be blank</div>
-				<div class="invalid-feedback"> Contact must be 10 digits and begin with 7/8/9</div>
+				<div *ngIf="registrationForm.controls['contact'].hasError('required')" class="invalid-feedback"> Contact
+					Cannot be blank
+				</div>
+				<div *ngIf="registrationForm.controls['contact'].hasError('pattern')" class="invalid-feedback"> Contact
+					must be 10 digits and begin with 7/8/9
+				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="email-input">E-Mail: </label>
-				<input class="form-control" id="email-input" pattern="^[a-zA-Z0-9._]+@[a-zA-Z]+[.com]" required
+				<input class="form-control" id="email-input" pattern="^[a-zA-Z0-9._]+[@]+[a-zA-Z]+[.com]" required
 					   formControlName="email" type="email">
-				<div class="invalid-feedback"> Email Cannot be blank</div>
-				<div class="invalid-feedback"> EMail must contain an '@' and must end with '.com'</div>
+				<div *ngIf="registrationForm.controls['email'].hasError('required')" class="invalid-feedback"> Email
+					Cannot be blank
+				</div>
+				<div *ngIf="registrationForm.controls['email'].hasError('pattern')" class="invalid-feedback"> EMail must
+					contain an '@' and must end with '.com'
+				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="password-input">Password: </label>
 				<input class="form-control" formControlName="password" id="password-input" maxlength="25" minlength="10" required
 					   type="password">
-				<div class="invalid-feedback"> Password Cannot be blank</div>
-				<div class="invalid-feedback"> Must contain at least 10 characters</div>
-				<div class="invalid-feedback"> Must contain at most 25 characters</div>
+				<div *ngIf="registrationForm.controls['password'].hasError('required')" class="invalid-feedback">
+					Password Cannot be blank
+				</div>
+				<div *ngIf="registrationForm.controls['password'].hasError('minlength')" class="invalid-feedback"> Must
+					contain at least 10 characters
+				</div>
+				<div *ngIf="registrationForm.controls['password'].hasError('maxlength')" class="invalid-feedback"> Must
+					contain at most 25 characters
+				</div>
 			</div>
-			<div class="mt-lg-3 mb-lg-3">
-				<button class="btn btn-success col-lg-12" type="submit"> Save Details</button>
-			</div>
-			<div class="mt-lg-3 mb-lg-3">
-				<button class="btn btn-danger col-lg-12" type="reset"> Reset Details</button>
+			<div class="buttons mt-lg-3 mb-lg-3">
+				<div class="mt-lg-3 mb-lg-3">
+					<button class="btn btn-success col-lg-12" type="submit"> Save Details</button>
+				</div>
+				<div class="mt-lg-3 mb-lg-3">
+					<button class="btn btn-danger col-lg-12" type="reset"> Reset Details</button>
+				</div>
+				<!--				<div class="mt-lg-3 mb-lg-3">-->
+				<!--					<button class="btn btn-primary col-lg-12" type="button"> Existing User ? Go To Login </button>-->
+				<!--				</div>-->
 			</div>
 		</form>
 	</div>
