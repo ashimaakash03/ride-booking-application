@@ -7,7 +7,8 @@
 		<form [formGroup]="loginForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="email-input">E-Mail: </label>
-				<input class="form-control" formControlName="email" id="email-input" pattern="^[a-zA-Z0-9._]+[@]+[a-zA-Z]+[.com]"
+				<input class="form-control" formControlName="email" id="email-input"
+					   pattern="^[a-zA-Z0-9._]+[@]+[a-zA-Z]+[.com]"
 					   required type="email">
 				<div *ngIf="loginForm.controls['email'].hasError('required')" class="invalid-feedback"> Email
 					Cannot be blank
@@ -29,6 +30,14 @@
 				</div>
 				<div *ngIf="loginForm.controls['password'].hasError('maxlength')" class="invalid-feedback"> Must
 					contain at most 25 characters
+				</div>
+			</div>
+			<div class="buttons mt-lg-3 mb-lg-3">
+				<div class="mt-lg-3 mb-lg-3">
+					<button class="btn btn-success col-lg-12" type="submit"> Login</button>
+				</div>
+				<div class="mt-lg-3 mb-lg-3">
+					<button class="btn btn-danger col-lg-12" type="reset"> Reset</button>
 				</div>
 			</div>
 		</form>
