@@ -10,7 +10,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {FooterComponent} from './components/footer/footer.component';
 import {BookingsComponent} from './components/bookings/bookings.component';
-import {MatLegacyButtonModule} from "@angular/material/legacy-button";
+
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import {MatLegacyButtonModule} from "@angular/material/legacy-button";
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		ReactiveFormsModule,
-		MatLegacyButtonModule,
 	],
   providers: [],
   bootstrap: [AppComponent]
