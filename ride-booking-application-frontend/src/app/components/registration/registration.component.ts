@@ -27,6 +27,7 @@ export class RegistrationComponent implements OnInit {
 				submitEvent.stopPropagation();
 			}
 			submitForm.classList.add('was-validated');
+			submitForm.reset();
 		});
 	}
 
