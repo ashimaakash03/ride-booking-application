@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
 	styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent {
+	bookingForm: any;
 
 }

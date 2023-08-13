@@ -2,3 +2,48 @@
 	<h1> Booking Form </h1>
 	<h3> Cab Within Minutes, Anytime of the day</h3>
 </div>
+<div class="container">
+	<div class="form mt-lg-5">
+		<form [formGroup]="bookingForm" class="needs-validation" novalidate>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="fullname-input">Full Name: </label>
+				<input class="form-control" formControlName="name" id="fullname-input" required type="text">
+				<div *ngIf="bookingForm.controls['fullname'].hasError('required')" class="invalid-feedback"> Name
+					Cannot be blank
+				</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="contact-input">Contact: </label>
+				<input class="form-control" formControlName="contact" id="contact-input" pattern="^[789]\d{9}" required
+					   type="text">
+				<div *ngIf="bookingForm.controls['contact'].hasError('required')" class="invalid-feedback"> Contact
+					Cannot be blank
+				</div>
+				<div *ngIf="bookingForm.controls['contact'].hasError('pattern')" class="invalid-feedback"> Contact
+					must be 10 digits and begin with 7/8/9
+				</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="fromlocation-input">Pickup Location: </label>
+				<input class="form-control" formControlName="name" id="fromlocation-input" required type="text">
+				<div *ngIf="bookingForm.controls['fromlocation'].hasError('required')" class="invalid-feedback">
+					Enter Pickup Location
+				</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="tolocation-input">Drop Location: </label>
+				<input class="form-control" formControlName="name" id="tolocation-input" required type="text">
+				<div *ngIf="bookingForm.controls['tolocation'].hasError('required')" class="invalid-feedback">
+					Enter Drop Location
+				</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="vehicle-input">Vehicle Type: </label>
+				<input class="form-control" formControlName="name" id="vehicle-input" required type="text">
+				<div *ngIf="bookingForm.controls['vehicle'].hasError('required')" class="invalid-feedback">
+					Enter Type of Cab
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
