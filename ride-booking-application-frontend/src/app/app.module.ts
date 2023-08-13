@@ -10,6 +10,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {FooterComponent} from './components/footer/footer.component';
 import {BookingsComponent} from './components/bookings/bookings.component';
+import {BookingHistoryComponent} from './components/booking-history/booking-history.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {BookingsComponent} from './components/bookings/bookings.component';
 	  LoginComponent,
 	  FooterComponent,
 	  BookingsComponent,
+	  BookingHistoryComponent,
   ],
 	imports: [
 		BrowserModule,
