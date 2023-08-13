@@ -25,11 +25,11 @@
 				<div *ngIf="loginForm.controls['password'].hasError('required')" class="invalid-feedback">
 					Password Cannot be blank
 				</div>
-				<div *ngIf="loginForm.controls['password'].hasError('minlength')" class="invalid-feedback"> Must
-					contain at least 10 characters
+				<div *ngIf="loginForm.controls['password'].hasError('minlength')" class="invalid-feedback">
+					Must contain at least 10 characters
 				</div>
-				<div *ngIf="loginForm.controls['password'].hasError('maxlength')" class="invalid-feedback"> Must
-					contain at most 25 characters
+				<div *ngIf="loginForm.controls['password'].hasError('maxlength')" class="invalid-feedback">
+					Must contain at most 25 characters
 				</div>
 			</div>
 			<div class="buttons mt-lg-3 mb-lg-3">
