@@ -4,7 +4,7 @@
 </div>
 <div class="container">
 	<div class="form mt-lg-5 justify-content-center">
-		<form class="needs-validation" novalidate>
+		<form [formGroup]="registrationForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="name-input">Full Name: </label>
 				<input class="form-control" id="name-input" required type="text">
@@ -29,6 +29,12 @@
 				<div class="invalid-feedback"> Password Cannot be blank</div>
 				<div class="invalid-feedback"> Must contain at least 10 characters</div>
 				<div class="invalid-feedback"> Must contain at most 25 characters</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<button class="btn btn-success col-lg-12" type="submit"> Save Details</button>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<button class="btn btn-danger col-lg-12" type="reset"> Reset Details</button>
 			</div>
 		</form>
 	</div>
