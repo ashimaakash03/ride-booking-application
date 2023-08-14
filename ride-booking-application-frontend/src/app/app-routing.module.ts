@@ -7,8 +7,8 @@ import {BookingHistoryComponent} from "./components/booking-history/booking-hist
 
 const routes: Routes = [
 	{path: '', component: RegistrationComponent, pathMatch: 'full'},
-	{path: 'sign-up', component: RegistrationComponent, pathMatch: 'full'},
-	{path: 'sign-in', component: LoginComponent, pathMatch: 'full'},
+	{path: 'registration', component: RegistrationComponent, pathMatch: 'full'},
+	{path: 'login', component: LoginComponent, pathMatch: 'full'},
 	{path: 'booking', component: BookingsComponent, pathMatch: 'full'},
 	{path: 'history', component: BookingHistoryComponent, pathMatch: 'full'}
 ];
