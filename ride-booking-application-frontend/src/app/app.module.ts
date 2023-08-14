@@ -11,7 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {FooterComponent} from './components/footer/footer.component';
 import {BookingsComponent} from './components/bookings/bookings.component';
 import {BookingHistoryComponent} from './components/booking-history/booking-history.component';
-
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import {BookingHistoryComponent} from './components/booking-history/booking-hist
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		ReactiveFormsModule,
+		HttpClientModule
 	],
   providers: [],
   bootstrap: [AppComponent]

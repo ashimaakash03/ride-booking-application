@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
 	selector: 'app-registration',
@@ -10,7 +11,7 @@ export class RegistrationComponent implements OnInit {
 
 	registrationForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder) {
+	constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) {
 		this.registrationForm = this.formBuilder.group({
 			fullname: ['', [Validators.required]],
 			contact: ['', [Validators.required, Validators.pattern]],
