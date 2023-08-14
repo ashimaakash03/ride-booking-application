@@ -33,11 +33,6 @@ export class RegistrationComponent implements OnInit {
 	}
 
 	registerUser() {
-		this.httpClient.post<any>("http://localhost:3000/registered-users", this.registrationForm.value)
-			.subscribe(() => {
-				alert("Registration Successful");
-				this.registrationForm.reset();
-				this.router.navigate(['login']);
-			});
+
 	}
 }
