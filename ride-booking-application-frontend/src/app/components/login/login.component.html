@@ -8,7 +8,7 @@
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="email-input">E-Mail: </label>
 				<input class="form-control" formControlName="email" id="email-input"
-					   pattern="^[a-zA-Z0-9._]+[@]+[a-zA-Z]+[.com]"
+					   pattern="^[a-zA-Z0-9._]+@+[a-zA-Z]+.com"
 					   required type="email">
 				<div *ngIf="loginForm.controls['email'].hasError('required')" class="invalid-feedback"> Email
 					Cannot be blank
