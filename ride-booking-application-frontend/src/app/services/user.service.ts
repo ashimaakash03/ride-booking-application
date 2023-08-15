@@ -11,8 +11,11 @@ export class UserService {
 
 	constructor(private httpClient: HttpClient) {
 	}
-
 	addUser(user: User): Observable<Array<User>> {
 		return this.httpClient.post<Array<User>>(this.url, user);
+	}
+
+	loginUser(): Observable<any> {
+		return this.httpClient.get(this.url);
 	}
 }

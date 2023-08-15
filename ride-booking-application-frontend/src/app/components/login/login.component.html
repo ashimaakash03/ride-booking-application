@@ -4,7 +4,7 @@
 </div>
 <div class="container col-lg-6">
 	<div class="form mt-lg-5">
-		<form [formGroup]="loginForm" class="needs-validation" novalidate>
+		<form (ngSubmit)="loginUser()" [formGroup]="loginForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="email-input">E-Mail: </label>
 				<input class="form-control" formControlName="email" id="email-input"
