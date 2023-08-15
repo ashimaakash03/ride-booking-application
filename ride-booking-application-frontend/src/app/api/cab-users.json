@@ -1,4 +1,32 @@
 {
-	"registered-users": [
-	]
+  "registered-users": [
+    {
+      "fullname": "",
+      "contact": "",
+      "email": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "fullname": "",
+      "contact": "8552035959",
+      "email": "ashimaakash1997@gmail.com",
+      "password": "@AshimAakash",
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "contact": "9189819216",
+      "email": "sach.rt_1973@gmail.com",
+      "password": "@Sachin2404",
+      "id": 3
+    },
+    {
+      "fullname": "",
+      "contact": "8334235567",
+      "email": "virat.kohli1988@gmail.com",
+      "password": "@ViratKohli",
+      "id": 4
+    }
+  ]
 }

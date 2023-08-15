@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
+import {Router} from "@angular/router";
 
 @Component({
 	selector: 'app-registration',
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit {
     users: User[] = [];
 	registrationForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private userService: UserService) {
+	constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
 		this.registrationForm = this.formBuilder.group({
 			fullname: ['', [Validators.required]],
 			contact: ['', [Validators.required, Validators.pattern]],
@@ -35,7 +36,7 @@ export class RegistrationComponent implements OnInit {
         this.userService.addUser(this.registrationForm.value).subscribe((data) => {
             this.users = data;
             alert("User Registered");
+			this.router.navigate(['/login']);
         })
-
 	}
 }
