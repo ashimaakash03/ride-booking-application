@@ -1,10 +1,10 @@
 <div class="container-fluid mt-4 text-center">
 	<h1> Booking Form </h1>
-	<h3> Book a cab within minutes, anytime of the day</h3>
+	<h3> Book a cab within minutes, anytime of the day. Fixed Rate.</h3>
 </div>
 <div class="container col-lg-6">
 	<div class="form mt-lg-5">
-		<form [formGroup]="bookingForm" class="needs-validation" novalidate>
+		<form (ngSubmit)="addBooking()" [formGroup]="bookingForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="fullname-input">Full Name: </label>
 				<input class="form-control" formControlName="name" id="fullname-input" required type="text">
@@ -25,23 +25,30 @@
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="fromlocation-input">Pickup Location: </label>
-				<input class="form-control" formControlName="name" id="fromlocation-input" required type="text">
+				<input class="form-control" formControlName="fromlocation" id="fromlocation-input" required type="text">
 				<div *ngIf="bookingForm.controls['fromlocation'].hasError('required')" class="invalid-feedback">
 					Enter Pickup Location
 				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="tolocation-input">Drop Location: </label>
-				<input class="form-control" formControlName="name" id="tolocation-input" required type="text">
+				<input class="form-control" formControlName="tolocation" id="tolocation-input" required type="text">
 				<div *ngIf="bookingForm.controls['tolocation'].hasError('required')" class="invalid-feedback">
 					Enter Drop Location
 				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="vehicle-input">Vehicle Type: </label>
-				<input class="form-control" formControlName="name" id="vehicle-input" required type="text">
+				<input class="form-control" formControlName="vehicle" id="vehicle-input" required type="text">
 				<div *ngIf="bookingForm.controls['vehicle'].hasError('required')" class="invalid-feedback">
 					Enter Type of Cab
+				</div>
+			</div>
+			<div class="mt-lg-3 mb-lg-3">
+				<label class="form-label" for="distance-input">Distance In KM: </label>
+				<input class="form-control" formControlName="distance" id="distance-input" required type="number">
+				<div *ngIf="bookingForm.controls['vehicle'].hasError('required')" class="invalid-feedback">
+					Enter Distance greater than 0
 				</div>
 			</div>
 			<div class="buttons mt-lg-3 mb-lg-3">

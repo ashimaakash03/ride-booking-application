@@ -1,4 +1,13 @@
 {
 	"bookings": [
+		{
+			"fullname": "",
+			"contact": "8334235567",
+			"fromlocation": "IGI T3",
+			"tolocation": "Noida, Sector 75",
+			"vehicle": "Car",
+			"distance": 42,
+			"id": 1
+		}
 	]
 }
