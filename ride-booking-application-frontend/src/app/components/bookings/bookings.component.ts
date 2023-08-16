@@ -20,7 +20,8 @@ export class BookingsComponent implements OnInit {
 			fromlocation: ['', [Validators.required]],
 			tolocation: ['', [Validators.required]],
 			vehicle: ['', [Validators.required]],
-			distance: ['', [Validators.required]]
+			distance: ['', [Validators.required]],
+			price: ['', [Validators.required]]
 		});
 	}
 
