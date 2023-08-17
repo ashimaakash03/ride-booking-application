@@ -7,7 +7,7 @@
 		<form (ngSubmit)="registerUser()" [formGroup]="registrationForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="fullname-input">Full Name: </label>
-				<input class="form-control" formControlName="name" id="fullname-input" required type="text">
+				<input class="form-control" formControlName="fullname" id="fullname-input" required type="text">
 				<div *ngIf="registrationForm.controls['fullname'].hasError('required')" class="invalid-feedback"> Name
 					Cannot be blank
 				</div>

@@ -33,14 +33,14 @@ export class LoginComponent implements OnInit {
 		});
 	}
 	loginUser() {
-		this.userService.loginUser().subscribe((data) => {
-			const user = data.find((anyUser: User) => {
-				return anyUser.email === this.loginForm.value.email && anyUser.password === this.loginForm.value.password
-			})
-			if (user) {
-				alert("Login Success");
-				this.router.navigate(['/booking']);
-			}
-		})
+		// 	this.userService.loginUser(this.loginForm.value).subscribe((data) => {
+		// 		const user = data.find((anyUser: User) => {
+		// 			return anyUser.email === this.loginForm.value.email && anyUser.password === this.loginForm.value.password
+		// 		})
+		// 		if (user) {
+		// 			alert("Login Success");
+		// 			this.router.navigate(['/booking']);
+		// 		}
+		// 	})
 	}
 }

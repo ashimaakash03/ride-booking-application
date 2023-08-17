@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
 	}
 	registerUser() {
         this.userService.addUser(this.registrationForm.value).subscribe((data) => {
-            this.users = data;
+			this.users.push(data);
             alert("User Registered");
 			this.router.navigate(['/login']);
         })

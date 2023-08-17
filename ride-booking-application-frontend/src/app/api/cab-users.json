@@ -27,6 +27,48 @@
       "email": "virat.kohli1988@gmail.com",
       "password": "@ViratKohli",
       "id": 4
+	},
+	  {
+		  "fullname": "",
+		  "contact": "7116668808",
+		  "email": "abhradeep.das@gmail.com",
+		  "password": "@Abhradeep",
+		  "id": 5
+	  },
+	  {
+		  "fullname": "",
+		  "contact": "",
+		  "email": "",
+		  "password": "",
+		  "id": 6
+	  },
+	  {
+		  "fullname": "",
+		  "contact": "9867546357",
+		  "email": "revanth.rawat@gmail.com",
+		  "password": "@RevanthRawar",
+		  "id": 7
+	  },
+	  {
+		  "fullname": "",
+		  "contact": "9852347245",
+		  "email": "himanshu.kumar@gmail.com",
+		  "password": "@Himanshu1412",
+		  "id": 8
+	  },
+	  {
+		  "fullname": "",
+		  "contact": "9636725634",
+		  "email": "advait.singh@gmail.com",
+		  "password": "@Advait1402",
+		  "id": 9
+	  },
+	  {
+		  "fullname": "Ashim Roy",
+		  "contact": "9154473660",
+		  "email": "ashim.roy@gmail.com",
+		  "password": "@Ashim04011998",
+		  "id": 10
     }
   ]
 }

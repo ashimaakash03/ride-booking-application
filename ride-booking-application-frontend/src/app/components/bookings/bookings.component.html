@@ -29,7 +29,7 @@
 		<form (ngSubmit)="addBooking()" [formGroup]="bookingForm" class="needs-validation" novalidate>
 			<div class="mt-lg-3 mb-lg-3">
 				<label class="form-label" for="fullname-input">Full Name: </label>
-				<input class="form-control" formControlName="name" id="fullname-input" required type="text">
+				<input class="form-control" formControlName="fullname" id="fullname-input" required type="text">
 				<div *ngIf="bookingForm.controls['fullname'].hasError('required')" class="invalid-feedback">
 					Name cannot be blank
 				</div>
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			<div class="mt-lg-3 mb-lg-3">
-				<label class="form-label" for="price-input"> </label>
+				<label class="form-label" for="price-input"> Price: </label>
 				<input class="form-control" formControlName="distance" id="price-input" required type="number">
 				<div *ngIf="bookingForm.controls['vehicle'].hasError('required')" class="invalid-feedback">
 					Enter Price
